@@ -19,6 +19,7 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.options << '--line-numbers'
   rdoc.rdoc_files.include('readme.md')
   rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.options = ["-C"]
 end
 
 Bundler::GemHelper.install_tasks
