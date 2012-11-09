@@ -1,5 +1,5 @@
-require "changelogger/version"
+require "mustached_octo_tyrion/version"
 
-module Changelogger
+module MustachedOctoTyrion
   # Your code goes here...
 end

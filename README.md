@@ -1,4 +1,4 @@
-# Changelogger
+# MustachedOctoTyrion
 
 _Poll: should the Github-generated-name stick?  I'm growing attached to it the
 longer it takes to come up with the perfect nom de repo._
@@ -15,7 +15,7 @@ many a blog post to be written about this, but one further advantage to this
 system is it makes it easy to track and document our changes, since each is
 accessible through the Github API.
 
-To take advantage of that, we use Changelogger internally at 6W to manage
+To take advantage of that, we use MustachedOctoTyrion internally at 6W to manage
 communication with our various client teams, alerting them to new features and
 API changes as we merge code in.  As an open-source project, other teams with
 similar workflows will, I hope, find this useful.
@@ -32,9 +32,9 @@ Features:
 * _Choose your own format_: output to HTML, Markdown, plain text, or add your own
   type.
 * _Tag and diff_: with the tagging option on and the right Github
-  permissions, Changelogger can tag your project and automatically generate a
+  permissions, MustachedOctoTyrion can tag your project and automatically generate a
   link to a diff.
-* _Send email_: with the appropriate configuration options, Changelogger will
+* _Send email_: with the appropriate configuration options, MustachedOctoTyrion will
   send an HTML email to a destination of your choice -- perfect for cron.
 
 **Thanks** to 6Wunderkinder, for allowing me to open-source this personal side
@@ -45,7 +45,7 @@ process both of reviewing code and of communicating changes.
 
 Add this line to your application's Gemfile:
 
-    gem 'changelogger'
+    gem 'mustached_octo_tyrion'
 
 And then execute:
 
@@ -53,12 +53,12 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install changelogger
+    $ gem install mustached_octo_tyrion
 
 ## Usage
 
-Changelogger is configured via a YAML file with options.  By default, this is
-located at ~/.changelogger/config.yml, but you can specify another option at
+MustachedOctoTyrion is configured via a YAML file with options.  By default, this is
+located at ~/.mustached_octo_tyrion/config.yml, but you can specify another option at
 run-time.
 
 Here's a sample config file with notes:
@@ -110,7 +110,7 @@ repos:
     # your repos
     # if you only have one, you don't to specify a defaults key
     # (technically, you don't need to specify that period, it's just useful)
-    "arsduo/changelogger":
+    "arsduo/mustached_octo_tyrion":
       some_overridden_setting: value
       # the rest of the settings come from defaults
 

@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'changelogger/version'
+require 'mustached_octo_tyrion/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "changelogger"
-  gem.version       = Changelogger::VERSION
+  gem.name          = "mustached_octo_tyrion"
+  gem.version       = MustachedOctoTyrion::VERSION
   gem.authors       = ["Alex Koppel"]
   gem.email         = ["alext@alexkoppel.com"]
   gem.description   = "A pull-request-based changelog generator"
