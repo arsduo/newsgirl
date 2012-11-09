@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Changelogger
+module MustachedOctoTyrion
   describe Configuration do
     it "loads and returns the YAML file at the default location" do
       path, result = stub("path"), stub("result")
@@ -28,7 +28,7 @@ module Changelogger
 
   describe ".config_path" do
     it "returns the path" do
-      expect(Configuration.config_path).to eq("~/.changelogger/config.yml")
+      expect(Configuration.config_path).to eq("~/.mustached_octo_tyrion/config.yml")
     end
   end
 end

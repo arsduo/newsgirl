@@ -1,8 +1,7 @@
-require "changelogger/configuration"
-require "changelogger/version"
+require "mustached_octo_tyrion/version"
+require "mustached_octo_tyrion/configuration"
 
-# Public: a system for generating changelog summaries based on pull requests.
-module Changelogger
+module MustachedOctoTyrion
 
   # Public: load the configuration from memory (if already assigned) or through
   # the Configuration object, which loads it from file (and memoizes the
@@ -22,4 +21,5 @@ module Changelogger
   def self.config=(data)
     @config = data
   end
+  # Your code goes here...
 end
