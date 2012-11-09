@@ -1,7 +1,7 @@
 # MustachedOctoTyrion
 
-_Poll: should the Github-generated-name stick?  I'm growing attached to it the
-longer it takes to come up with the perfect nom de repo._
+_Poll: should the Github-generated-name stick?  I gotta admit, I'm kinda
+growing attached to what was supposed to be a placeholder._
 
 Generate changelogs based on Github pull requests.  Make it easy to keep
 clients, app developers (both internal and external), and your future self
