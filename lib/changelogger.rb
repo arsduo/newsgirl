@@ -1,5 +1,5 @@
-require "mustached_octo_tyrion/version"
+require "newsgirl/version"
 
-module MustachedOctoTyrion
+module Newsgirl
   # Your code goes here...
 end

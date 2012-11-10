@@ -1,0 +1,3 @@
+module Newsgirl
+  VERSION = "0.0.1"
+end
