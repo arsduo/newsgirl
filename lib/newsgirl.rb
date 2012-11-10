@@ -1,8 +1,8 @@
-require "mustached_octo_tyrion/version"
-require "mustached_octo_tyrion/configuration"
+require "newsgirl/version"
+require "newsgirl/configuration"
 
 # Public: a system for generating changelog summaries based on pull requests.
-module MustachedOctoTyrion
+module Newsgirl
   # Public: load the configuration from memory (if already assigned) or through
   # the Configuration object, which loads it from file (and memoizes the
   # result).

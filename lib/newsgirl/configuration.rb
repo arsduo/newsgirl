@@ -1,4 +1,4 @@
-module MustachedOctoTyrion
+module Newsgirl
   # Public: configuration.
   module Configuration
     # Public: an error raised when the config file is missing.
@@ -20,9 +20,9 @@ module MustachedOctoTyrion
 
     # Public: load configuration from the ~/.changelogger/config.yml file.
     #
-    # Raises MustachedOctoTyrion::Configuration::MissingConfigFile if the config file
+    # Raises Newsgirl::Configuration::MissingConfigFile if the config file
     # doesn't exist.
-    # Raises MustachedOctoTyrion::Configuration::CorruptConfigFile if the file can't
+    # Raises Newsgirl::Configuration::CorruptConfigFile if the file can't
     # be parsed.
     #
     # Returns the loaded configuration.
@@ -30,11 +30,11 @@ module MustachedOctoTyrion
       YAML.load_file(config_path)
     rescue Errno::ENOENT
       raise MissingConfigFile.new(
-        "The MustachedOctoTyrion config file couldn't be found at #{config_path}"
+        "The Newsgirl config file couldn't be found at #{config_path}"
       )
     rescue Psych::SyntaxError => err
       raise CorruptConfigFile.new(
-        "The MustachedOctoTyrion config file at #{config_path} is corrupt: #{err.message}",
+        "The Newsgirl config file at #{config_path} is corrupt: #{err.message}",
         err
       )
     end
@@ -42,7 +42,7 @@ module MustachedOctoTyrion
     # Public: the path to the configuration directory.  This will probably have
     # to change longer-term, but for now, this basic approach works.
     def self.config_path
-      "~/.mustached_octo_tyrion/config.yml"
+      "~/.newsgirl/config.yml"
     end
   end
 end
