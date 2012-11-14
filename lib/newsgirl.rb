@@ -1,6 +1,7 @@
 require "newsgirl/version"
 require "newsgirl/configuration"
 require "newsgirl/git_repo"
+require "newsgirl/time_resolver"
 
 # Public: a system for generating changelog summaries based on pull requests.
 module Newsgirl
