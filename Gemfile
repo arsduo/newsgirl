@@ -17,7 +17,7 @@ group :development, :test do
 
   if RUBY_PLATFORM =~ /darwin/
     # OS X integration
-    gem "ruby_gntp"
+    gem "growl"
     gem "rb-fsevent"
   end
 end
