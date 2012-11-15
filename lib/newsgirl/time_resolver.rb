@@ -26,11 +26,11 @@ module Newsgirl
         # Turn the Range into an Array
         # Note: this works with Dates, but not with Times, whose ranges can't
         # be enumerated.
-        moments.each.map {|moment| moment.to_time}
+        moments.each.map(&:to_time)
       when Array
         # Sort the array so the first element is the earliest, and turn them
         # all into moments.
-        moments.map {|moment| moment.to_time}.sort
+        moments.map(&:to_time}.sort
       else
         moments.to_time
       end
