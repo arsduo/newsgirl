@@ -15,6 +15,10 @@ group :development, :test do
   gem "faker"
   gem "timecop"
 
+  # Code quality
+  gem "rdoc"
+  gem "pelusa", platform: :rbx
+
   if RUBY_PLATFORM =~ /darwin/
     # OS X integration
     gem "growl"
