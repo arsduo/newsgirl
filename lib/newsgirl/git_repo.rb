@@ -16,7 +16,7 @@ module Newsgirl
     # project - the name of the Github repo, with owner ("arsduo/newsgirl")
     # gh_options - a hash of options for the GH gem, most often including
     # authentication via token or basic auth.
-    def initialize(project, gh_options)
+    def initialize(project, gh_options = {})
       @project = project
       @api = GH::DefaultStack.build(gh_options)
     end
@@ -45,8 +45,9 @@ module Newsgirl
     # since - get only issues after this ISO8601 timestamp.
     #
     # Returns an array of hashes representing the repos' issues.
-    def issues(state, since)
-      @api["repos/#{@project}/issues?state=#{state}&since=#{since.iso8601}"]
+    def issues(state, from = nil)
+      since = from ? "&since=#{from.iso8601}" : ""
+      @api["repos/#{@project}/issues?state=#{state}#{since}"]
     end
 
     # Public: gets a specific issue request.

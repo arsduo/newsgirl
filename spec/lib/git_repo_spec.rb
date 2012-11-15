@@ -14,6 +14,10 @@ module Newsgirl
       it "creates an API instance with the provided options" do
         expect(repo.api.options).to eq(options)
       end
+
+      it "defaults options to {}" do
+        expect(GitRepo.new(project).options).to eq(options)
+      end
     end
 
     describe "#pulls" do
@@ -47,6 +51,14 @@ module Newsgirl
               with("repos/#{project}/issues?state=#{state}&since=#{since.iso8601}").
               and_return(result = stub)
         expect(repo.issues(state, since)).to eq(result)
+      end
+
+      it "gets all issues if no time specified" do
+        state = "wavering"
+        repo.api.should_receive(:[]).
+              with("repos/#{project}/issues?state=#{state}").
+              and_return(result = stub)
+        expect(repo.issues(state)).to eq(result)
       end
     end
 
