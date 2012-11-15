@@ -30,7 +30,7 @@ module Newsgirl
       when Array
         # Sort the array so the first element is the earliest, and turn them
         # all into moments.
-        moments.map(&:to_time}.sort
+        moments.map(&:to_time).sort
       else
         moments.to_time
       end
