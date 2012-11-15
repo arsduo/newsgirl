@@ -73,7 +73,7 @@ module Newsgirl
       end
     end
 
-    describe "#closed_issue_from_dates" do
+    describe "#merged_issues" do
       let(:time) { Time.now }
       let(:issues) {
         [
@@ -128,11 +128,13 @@ module Newsgirl
       end
 
       before :each do
-        repo.stub(:issues_by_date).with("closed", anything).and_return(issues)
+        repo.stub(:closed_issues).with(anything).and_return(issues)
         repo.stub(:pull_request) {|number| pull_for_issue(number) }
       end
 
       let(:merged_prs) { repo.merged_pull_requests(stub) }
+
+      pending "Missing spec for closed issues!"
 
       it "filters down to only merged pull requests" do
         expect(merged_prs.map {|pr| pr["number"]}).to eq([1, 2])

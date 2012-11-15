@@ -62,7 +62,7 @@ module Newsgirl
     # date_filter - a Date object or an array of Dates.
     #
     # Returns an array of issue hashes that fall in the given range.
-    def closed_issue_from_dates(date_filter)
+    def closed_issues(date_filter)
       dates = Array[date_filter].sort
       # Get all the dates since the earliest date provided, then
       # filter out any issues not included in the provided filter.
@@ -83,12 +83,12 @@ module Newsgirl
     # (PR info is merged second, so it overwrites equivalent keys in the
     # issue.)
     def merged_pull_requests(date_filter)
-      issues_by_date("closed", date_filter).inject([]) do |merged_issues, issue|
+      closed_issues(date_filter).inject([]) do |merged_issues, issue|
         # Github issues and PRs share the same number
-        pr = pull_request(issue["number"])
+        pull_req = pull_request(issue["number"])
         # see if this is a real, merged pull request$
-        if pr["merged_at"] # this was merged, not closed
-          merged_issues << issue.to_hash.merge(pr.to_hash)
+        if pull_req["merged_at"] # this was merged, not closed
+          merged_issues << issue.to_hash.merge(pull_req.to_hash)
         end
         merged_issues
       end
