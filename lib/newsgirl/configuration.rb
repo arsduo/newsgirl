@@ -2,7 +2,7 @@ module Newsgirl
   # Public: configuration.
   module Configuration
     # Public: an error raised when the config file is missing.
-    class MissingConfigFile < Errno::ENOENT; end
+    class MissingConfigFile < StandardError; end
     # Public: an error raised when the config file is malformed.
     class CorruptConfigFile < StandardError
       # Public: the original Psych::SyntaxError.

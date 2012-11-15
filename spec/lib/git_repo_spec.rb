@@ -16,7 +16,7 @@ module Newsgirl
       end
 
       it "defaults options to {}" do
-        expect(GitRepo.new(project).options).to eq(options)
+        expect(GitRepo.new(project).api.options).to eq({})
       end
     end
 

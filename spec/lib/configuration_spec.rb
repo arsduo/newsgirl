@@ -10,14 +10,21 @@ module Newsgirl
     end
 
     it "raises MissingConfigFile if the file is missing" do
-      YAML.stub(:load_file).and_raise(Errno::ENOENT)
+      YAML.stub(:load_file).and_raise(Errno::ENOENT.new)
       expect {
         Configuration.load_config
       }.to raise_error(Configuration::MissingConfigFile)
     end
 
     it "raises CorruptConfigFile if the file can't be loaded" do
-      error = Psych::SyntaxError.new("file", 1, 2, 3, "badness", stub("ctx"))
+      # absurdly, this seems to have different initializers in different
+      # implementations
+      error = if RUBY_ENGINE == "ruby"
+        Psych::SyntaxError.new("file", 1, 2, 3, "badness", stub("ctx"))
+      elsif RUBY_ENGINE == "rbx"
+        Psych::SyntaxError.new
+      end
+
       YAML.stub(:load_file).and_raise(error)
 
       expect {
