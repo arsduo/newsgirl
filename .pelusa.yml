@@ -1,0 +1,14 @@
+lints:
+  InstanceVariables:
+    limit: 5
+  LineRestriction:
+    limit: 200
+  Properties:
+    enabled: false
+  ElseClauses:
+    enabled: false
+  IndentationLevel:
+    enabled: false
+  DemeterLaw:
+    whitelist: Object, Kernel, Enumerable, Array, Hash
+    allow_conversions: true

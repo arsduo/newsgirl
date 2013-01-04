@@ -1,1 +1,1 @@
-rvm use rbx@changelogger --create
+rvm use ruby-2.0.0-preview1@newsgirl --create

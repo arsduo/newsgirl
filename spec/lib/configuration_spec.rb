@@ -19,11 +19,7 @@ module Newsgirl
     it "raises CorruptConfigFile if the file can't be loaded" do
       # absurdly, this seems to have different initializers in different
       # implementations
-      error = if RUBY_ENGINE == "ruby"
-        Psych::SyntaxError.new("file", 1, 2, 3, "badness", stub("ctx"))
-      elsif RUBY_ENGINE == "rbx"
-        Psych::SyntaxError.new
-      end
+      error = Psych::SyntaxError.new("file", 1, 2, 3, "badness", stub("ctx"))
 
       YAML.stub(:load_file).and_raise(error)
 
